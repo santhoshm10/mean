@@ -1,0 +1,10 @@
+const express = require('express'); 
+const {mongoose} = require('./db');
+const signup = require('./signupController'); 
+const login = require('./loginController'); 
+const cors = require('cors');
+const bodyParser = require('body-parser'); 
+const app = express();
+app.use(cors()); app.use(bodyParser.json()); 
+app.use('/signup',signup); app.use('/login',login);
+app.listen(2000,() => console.log("Server is running at 3000"));
